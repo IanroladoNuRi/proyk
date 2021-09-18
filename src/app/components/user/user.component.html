@@ -1,0 +1,66 @@
+<div class="form-container">
+    <h1>{{header}}</h1>
+    <form [formGroup]="userForm" (ngSubmit)="onSaveForm()">
+        <div class="container_usr_input">
+            <div class="user_input">
+                <p>Cédula:</p><br />
+                <input type="text" formControlName="ci" #cedula placeholder="Ingrese la cédula sin guión.." (keyup)="VerifyCI(cedula.value)">
+                <div class='alert-danger' *ngIf="ci?.invalid || ciVal==false">
+                    <div class="container-error-message" *ngIf="ci?.errors?.required">
+                        El campo es obligatorio
+                    </div>
+                    <div class="container-error-message" *ngIf="(ci?.dirty || ci?.touched) && ciVal==false">
+                        Ingrese una cedula valida
+                    </div>
+                    <div class="container-error-message" *ngIf="ci?.errors?.minlength || ci?.errors?.maxlength">
+                        El campo debe contener 10 caracteres
+                    </div>
+
+                    <div class="container-error-message" *ngIf="ci?.errors?.pattern">
+                        El campo no debe contener letras, tampoco caracteres especiales
+                    </div>
+                </div>                
+            </div>
+            <div class="user_input">
+                <p>Nombres:</p><br />
+                <input type="text" formControlName="name" placeholder="Ingrese el nombre..">
+                <div class='alert-danger' *ngIf="name?.invalid">
+                    <div class="container-error-message" *ngIf="name?.errors?.required">
+                        El campo es obligatorio
+                    </div>
+                    <div class="container-error-message" *ngIf="name?.invalid && name?.errors?.pattern">
+                        El campo no debe contener números, tampoco caracteres especiales
+                    </div>
+                </div>
+            </div>
+            <div class="user_input">
+                <p>Apellidos:</p><br />
+                <input type="text" formControlName="lastname" placeholder="Ingrese el apellido..">
+                <div class='alert-danger' *ngIf="lastname?.invalid">
+                    <div class="container-error-message" *ngIf="lastname?.errors?.required">
+                        El campo es obligatorio
+                    </div>
+                    <div class="container-error-message" *ngIf="lastname?.invalid && lastname?.errors?.pattern">
+                        El campo no debe contener números, tampoco caracteres especiales
+                    </div>
+                </div>
+            </div>
+            <div class="user_input">
+                <p>Correo electrónico:</p><br />
+                <input type="text" formControlName="email" placeholder="Ingrese el correo electronico..">
+                <div class='alert-danger' *ngIf="email?.invalid">
+                    <div class="container-error-message" *ngIf="email?.errors?.required">
+                        El campo es obligatorio
+                    </div>
+                    <div class="container-error-message" *ngIf="email?.invalid && email?.errors?.pattern">
+                        Ingrese un email válido
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="end_form">
+            <button type="submit" class="btn-save">Guardar</button>
+            <input type="button" routerLink="/listuser" class="btn-save" value="Cancelar"/>
+        </div>
+    </form>
+</div>

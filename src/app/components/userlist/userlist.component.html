@@ -1,0 +1,51 @@
+<div class="form-container">
+    <div class="head-container">
+        <h1>Lista de usuarios</h1>
+        <button class="add-user" routerLink="/user">Añadir usuario</button>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th><abbr title="Num">Num</abbr></th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Cédula</th>
+                <th>Correo</th>
+                <th>Vacunado</th>
+                <th>Tipo de vacuna</th>
+                <th>Fecha de vacunacion</th>
+                <th>Modificar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th><abbr title="Num">Num</abbr></th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Cédula</th>
+                <th>Correo</th>
+                <th>Vacunado</th>
+                <th>Tipo de vacuna</th>
+                <th>Fecha de vacunacion</th>
+                <th>Modificar</th>
+                <th>Eliminar</th>
+            </tr>
+        </tfoot>
+        <tbody>
+            <tr *ngFor="let data of alldata; let i=index">
+                <th>{{i+1}}</th>
+                <td>{{data.nombre}}</td>
+                <td>{{data.apellido}}</td>
+                <td>{{data.ci}}</td>
+                <td>{{data.correo}}</td>
+                <td><input type="checkbox" checked disabled></td>
+                <th>Tipo de vacuna</th>
+                <th>Fecha de vacunacion</th>
+                <td><button routerLink="/user/{{data.id}}">Modificar</button></td>
+                <td><button (click)="eliminar(data.id)">Eliminar</button></td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>

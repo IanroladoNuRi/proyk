@@ -1,0 +1,24 @@
+.empleado_input{
+    margin-top: 3%;
+    margin-right: 4%;
+    margin-left: 4%;
+    width: 40%;
+}
+
+input[type=text]{
+    transition: all 0,30s ease-in-out;
+    outline: none;
+    box-sizing: border-box;
+    width: 100%;
+    height: 3em;
+    background-color:#fff;
+    border: 1px solid;
+    padding: 3%;
+    color: #555;
+    font: 95% Arial, helvetica, sans-serif;
+}
+.container_emp_input{
+    display: flex;
+    flex-wrap: wrap; 
+}
+

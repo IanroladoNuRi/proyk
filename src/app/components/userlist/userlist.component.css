@@ -1,0 +1,32 @@
+.form-container {
+    font: 95% Arial, Helvetica, sans-serif;
+    max-width: 100%;
+    padding: 16px;
+    margin: 10px auto;
+    background-color: #ededed;
+}
+
+.head-container{
+    display: flex;
+    justify-content: space-between;
+    background-color: #ff8843;
+    margin: -16px -16px 16px -16px;
+} 
+
+h1{
+    background-color: #ff8843;
+    padding: 20px 0;
+    font-size: 140%;
+    font-weight: 300;
+    text-align: left;
+    color: #fff;
+}
+
+.table{
+    width: 100%;
+}
+
+.add-user{
+    margin: 1em 5em 1em 1em;
+    font-size: 15px;;
+}

@@ -1,0 +1,36 @@
+<div class="form-container">
+    <h1>Editar Informacion del usuario</h1>
+    <form [formGroup]="empleadoForm">
+        <div class="container_emp_input">
+            <div class="empleado_input">
+                <p>Fecha de nacimiento:</p><br />
+                <input type="text" formControlName="birthDate" placeholder="Ingrese su fecha de nacimiento..">
+            </div>
+            <div class="empleado_input">
+                <p>Dirección:</p><br />
+                <input type="text" formControlName="direction" placeholder="Ingrese su direccion de domicilio..">
+            </div>
+            <div class="empleado_input">
+                <p>Telefono:</p><br />
+                <input type="text" formControlName="celNumber" placeholder="Ingrese su numero de telefono..">
+            </div>
+            <div class="empleado_input">
+                <p>Marque la siguiente casilla en caso de estar vacunado</p><br />
+                <div class="emp_vac">
+                    <input type="checkbox" name="vaccinationState" [checked]="vaccinationState"
+                        (change)="onChangeVac()">
+                </div>
+            </div>
+
+
+            <div class="vacuna" *ngIf="vaccinationState == true">
+                <app-vaccinationform></app-vaccinationform>
+            </div>
+
+        </div>
+        <div class="end_form">
+            <button type="submit" class="btn-save">Guardar</button>
+            <button type="submit" class="btn-save">Cancelar</button>
+        </div>
+    </form>
+</div>
